@@ -8,13 +8,11 @@ const Header = () => {
   return (
     <header className="fixed top-0 z-50 w-full bg-neutral-950/80 backdrop-blur-sm border-b border-neutral-800 transition-all duration-300">
       <div className="flex justify-between items-center py-3 px-6 md:px-10">
-        {/* Desktop Layout */}
         <div className="hidden md:flex w-full justify-between items-center">
           <Nav />
           <Contact />
         </div>
 
-        {/* Mobile Hamburger */}
         <div className="md:hidden w-full flex justify-end">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -28,7 +26,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
       <div
         className={`md:hidden absolute top-full left-0 w-full bg-neutral-900 border-b border-neutral-800 shadow-2xl overflow-hidden transition-all duration-300 ease-in-out ${
           isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"

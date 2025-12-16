@@ -12,6 +12,10 @@ const PageHome = () => {
       typeProjet: "Projet scolaire",
       description:
         "Ce portfolio a été réalisé pour présenter mes compétences et mes projets. Il utilise React 19 et TailwindCSS v4.",
+      link: {
+        site: "/",
+        code: "https://github.com/Swaayvee/Portfolio",
+      },
     },
     {
       title: "To-do list",
@@ -20,6 +24,9 @@ const PageHome = () => {
       typeProjet: "Projet personnel",
       description:
         "Ce portfolio a été réalisé pour présenter mes compétences et mes projets. Il utilise React 19 et TailwindCSS v4.",
+      link: {
+        site: "https://to-do-project-angular.firebaseapp.com/",
+      },
     },
     {
       title: "Co Vote",
@@ -28,6 +35,7 @@ const PageHome = () => {
       typeProjet: "Projet scolaire",
       description:
         "Ce portfolio a été réalisé pour présenter mes compétences et mes projets. Il utilise React 19 et TailwindCSS v4.",
+      link:{},
     },
   ];
 

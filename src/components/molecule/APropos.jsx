@@ -1,5 +1,3 @@
-import Image from "../atom/Image";
-
 const APropos = () => {
   return (
     <section
