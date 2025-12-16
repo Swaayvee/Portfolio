@@ -18,7 +18,7 @@ const FuturPro = () => {
           </h3>
           <p className="pl-2 border-l border-neutral-800">
             Après le BUT, mon objectif principal est de travailler dans une
-            entreprise de développement informatique, où je pourrai mettre en
+            entreprise se concentrant dans la conception d'application et/ou site web, où je pourrai mettre en
             pratique les compétences acquises durant ces 3 années. Ce premier
             pas dans le monde professionnel me permettra d’approfondir mes
             connaissances, de m’adapter à des environnements variés et de
