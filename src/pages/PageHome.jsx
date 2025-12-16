@@ -29,33 +29,11 @@ const PageHome = () => {
       description:
         "Ce portfolio a été réalisé pour présenter mes compétences et mes projets. Il utilise React 19 et TailwindCSS v4.",
     },
-    {
-      title: "Pokemon TCG",
-      langage: "Java",
-      framework: "JavaFX",
-      typeProjet: "Projet scolaire",
-      description:
-        "Ce portfolio a été réalisé pour présenter mes compétences et mes projets. Il utilise React 19 et TailwindCSS v4.",
-    },
   ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <div className="flex flex-col gap-20 p-4 pb-10">
-      < APropos />
+      <APropos />
       <FuturPro />
       <div
         className="flex flex-row flex-wrap items-center justify-around gap-y-20 gap-x-10 m-4"
@@ -89,16 +67,6 @@ const PageHome = () => {
             typeProjet="Projet scolaire"
           ></Card>
         </Link>
-
-        <Link to="/project/pokemon-tcg" state={{...projects[3]}}>
-          <Card
-            title="Pokemon TCG"
-            langage="Java"
-            framework="JavaFX"
-            typeProjet="Projet scolaire"
-          ></Card>
-        </Link>
-
       </div>
       <div className="flex justify-center">
         <a

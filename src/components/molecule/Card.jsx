@@ -1,8 +1,12 @@
 const Card = (props) => {
-  const tech = props.framework ? `${props.langage} - ${props.framework}` : props.langage;
-  const typeProjet = props.typeProjet ? (props.typeProjet).charAt(0).toUpperCase() + (props.typeProjet).slice(1) : "";
+  const tech = props.framework
+    ? `${props.langage} - ${props.framework}`
+    : props.langage;
+  const typeProjet = props.typeProjet
+    ? props.typeProjet.charAt(0).toUpperCase() + props.typeProjet.slice(1)
+    : "";
   return (
-    <div className="w-[max(350px,100dvw/4)] h-[max(350px,100dvw/4)] flex flex-col items-start justify-start gap-2 border-2 border-white rounded-xl bg-neutral-900 hover:scale-102 hover:shadow-md hover:shadow-neutral-400 hover:translate-y-[-5px] transition-all duration-300 opacity-80 hover:opacity-100 p-8">
+    <div className="w-[max(350px,100dvw/4)] h-[max(350px,100dvw/4)] flex flex-col items-start justify-start gap-4 border border-neutral-600 rounded-2xl bg-neutral-900/90 backdrop-blur-sm hover:scale-[1.02] hover:border-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 opacity-90 hover:opacity-100 p-6 md:p-8">
       <p className="text-xl font-bold">&nbsp;&nbsp;&nbsp;&nbsp;{props.title}</p>
       <div className="bg-neutral-800 w-full flex-1 min-h-0 rounded-lg p-2 py-3 no-scollbar">
         <div className="w-full h-full overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] flex flex-col">
