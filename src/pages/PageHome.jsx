@@ -19,7 +19,11 @@ let projects = [
       site: "/",
       code: "https://github.com/Swaayvee/Portfolio",
     },
-    images: {},
+    images: {
+      main: "/assets/Portfolio/generalView.png",
+      code: "",
+      other: "/assets/Portfolio/liquidGlassEffect_ProjectPresentation.png",
+    },
   },
   {
     title: "To-do list",
