@@ -15,7 +15,7 @@ const Card = (props) => {
               <p>
                 <strong>{tech}</strong>
               </p>
-              <p>{typeProjet}</p>
+              <p className="px-3 py-1 mt-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 uppercase tracking-widest shadow-[0_0_10px_rgba(59,130,246,0.1)] w-fit">{typeProjet}</p>
             </div>
             {props.children}
           </div>

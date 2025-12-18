@@ -1,4 +1,6 @@
 const APropos = () => {
+  const imageProfile = "";
+
   return (
     <section
       id="about"
@@ -12,11 +14,17 @@ const APropos = () => {
         <div className="relative group shrink-0">
           <div className="absolute -inset-1 bg-linear-to-r from-neutral-600 to-neutral-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
           <div className="relative aspect-square w-64 overflow-hidden rounded-full border-4 border-neutral-800 shadow-2xl">
-            <img
-              src="/src/assets/free-nature-images.jpg"
-              className="h-full w-full object-cover transform hover:scale-110 transition-transform duration-500"
-              alt="Arthur Touron"
-            />
+            {imageProfile ? (
+              <img
+                src={imageProfile}
+                className="h-full w-full object-cover transform hover:scale-110 transition-transform duration-500"
+                alt="Arthur Touron"
+              />
+            ) : (
+              <div className="h-full w-full bg-neutral-700 flex items-center justify-center hover:scale-103 transition-all duration-500">
+                <p className="text-lg font-semibold text-neutral-300/80">Pas encore disponible</p>
+              </div>
+            )}
           </div>
         </div>
 

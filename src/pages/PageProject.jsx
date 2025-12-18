@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 
 const PageProject = () => {
   const location = useLocation();
   const data = location.state;
+  const [selectedImage, setSelectedImage] = useState(false);
 
   if (!data) {
     return (
@@ -23,11 +25,12 @@ const PageProject = () => {
     );
   }
 
-  const technologies = (
-    data.langage + (data.framework ? `, ${data.framework}` : "")
-  )
+  const { title, langage, framework, typeProjet, description, link, images, contexte } =
+    data;
+
+  const technologies = (langage + (framework ? `, ${framework}` : ""))
     .split(/,| et /)
-    .map((t) => t.trim())
+    .map((t) => t.trim());
 
   return (
     <div className="flex flex-col gap-6 pb-20 max-w-7xl mx-auto w-full">
@@ -47,12 +50,12 @@ const PageProject = () => {
         <div className="border-b border-neutral-700/50 pb-8 space-y-6">
           <div className="flex flex-wrap items-center gap-3">
             <span className="px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 uppercase tracking-widest shadow-[0_0_10px_rgba(59,130,246,0.1)]">
-              {data.typeProjet}
+              {typeProjet}
             </span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold bg-linear-to-r from-white via-neutral-200 to-neutral-500 bg-clip-text text-transparent">
-            {data.title}
+            {title}
           </h1>
         </div>
 
@@ -85,17 +88,20 @@ const PageProject = () => {
                 À propos du projet
               </h3>
               <div className="text-neutral-300 text-lg leading-loose space-y-4">
-                <p>{data.description}</p>
+                <p>{contexte}</p>
+                <p>{description}</p>
               </div>
             </div>
 
             <div className="flex gap-4 pt-4">
-              {data.link.site ? (
+              {link && link.site ? (
                 <Link
-                  to={data.link.site}
+                  to={link.site}
                   className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-black font-semibold hover:bg-neutral-200 transition-colors"
                 >
-                  <span className="material-symbols-outlined">rocket_launch</span>
+                  <span className="material-symbols-outlined">
+                    rocket_launch
+                  </span>
                   Voir le site
                 </Link>
               ) : (
@@ -103,13 +109,15 @@ const PageProject = () => {
                   disabled
                   className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-black font-semibold opacity-50 cursor-not-allowed"
                 >
-                  <span className="material-symbols-outlined">rocket_launch</span>
+                  <span className="material-symbols-outlined">
+                    rocket_launch
+                  </span>
                   Voir le site
                 </button>
               )}
-              {data.link.code ? (
+              {link && link.code ? (
                 <Link
-                  to={data.link.code}
+                  to={link.code}
                   className="flex items-center gap-2 px-6 py-3 rounded-xl bg-neutral-800 text-white font-semibold border border-neutral-700 hover:bg-neutral-700 transition-colors"
                 >
                   <span className="material-symbols-outlined">code</span>
@@ -127,33 +135,98 @@ const PageProject = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-5 flex flex-col gap-6">
+          <div className="lg:col-span-5 lg:justify-center flex flex-col gap-6">
             <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-neutral-700 bg-neutral-800 group shadow-2xl">
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-neutral-600 gap-3 group-hover:text-neutral-500 transition-colors">
-                <span className="material-symbols-outlined text-6xl">
-                  image
-                </span>
-                <span className="text-sm font-medium uppercase tracking-widest">
-                  Aperçu principal
-                </span>
-              </div>
-              {/* <img src={data.image} alt={data.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /> */}
-              <div className="absolute inset-0 bg-linear-to-t from-neutral-900/50 to-transparent opacity-60"></div>
+              {images && images.main ? (
+                <button
+                  className="absolute inset-0 w-full h-full cursor-zoom-in p-0 border-0 outline-none"
+                  onClick={() => setSelectedImage(`${images.main}`)}
+                >
+                  <img
+                    src={`${images.main}`}
+                    alt={title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </button>
+              ) : (
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-neutral-600 gap-3 group-hover:text-neutral-500 transition-colors z-10">
+                  <span className="material-symbols-outlined text-6xl">
+                    image
+                  </span>
+                  <span className="text-sm font-medium uppercase tracking-widest">
+                    Aperçu principal
+                  </span>
+                </div>
+              )}
+              {!images?.main && (
+                <div className="absolute inset-0 bg-linear-to-t from-neutral-900/50 to-transparent opacity-60"></div>
+              )}
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <div className="aspect-square rounded-xl border border-neutral-700 bg-neutral-800/50 flex items-center justify-center text-neutral-700">
-                <span className="material-symbols-outlined">
-                  screenshot_monitor
-                </span>
+              <div className="aspect-square rounded-xl border border-neutral-700 bg-neutral-800/50 overflow-hidden relative group">
+                {images && images.other ? (
+                  <button
+                    className="w-full h-full cursor-zoom-in p-0 border-0 outline-none block"
+                    onClick={() => setSelectedImage(`${images.other}`)}
+                  >
+                    <img
+                      src={`${images.other}`}
+                      alt={title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </button>
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-neutral-700">
+                    <span className="material-symbols-outlined">
+                      screenshot_monitor
+                    </span>
+                  </div>
+                )}
               </div>
-              <div className="aspect-square rounded-xl border border-neutral-700 bg-neutral-800/50 flex items-center justify-center text-neutral-700">
-                <span className="material-symbols-outlined">photo_library</span>
+              <div className="aspect-square rounded-xl border border-neutral-700 bg-neutral-800/50 overflow-hidden relative group">
+                {images && images.code ? (
+                  <button
+                    className="w-full h-full cursor-zoom-in p-0 border-0 outline-none block"
+                    onClick={() => setSelectedImage(`${images.code}`)}
+                  >
+                    <img
+                      src={`${images.code}`}
+                      alt={title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </button>
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-neutral-700">
+                    <span className="material-symbols-outlined">
+                      photo_library
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-100 flex items-center justify-center bg-black/90 backdrop-blur-md p-4 animate-in fade-in duration-200"
+          onClick={() => setSelectedImage(!selectedImage)}
+        >
+          <button
+            className="absolute top-4 right-4 p-2 text-white/50 hover:text-white transition-colors cursor-pointer"
+            onClick={() => setSelectedImage(!selectedImage)}
+          >
+            <span className="material-symbols-outlined text-4xl">close</span>
+          </button>
+          <img
+            src={selectedImage}
+            alt="Full screen view"
+            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl animate-in zoom-in-95 duration-200"
+          />
+        </div>
+      )}
     </div>
   );
 };
