@@ -9,7 +9,7 @@ const Card = (props) => {
     <div className="w-[max(350px,100dvw/4)] h-[max(350px,100dvw/4)] flex flex-col items-start justify-start gap-4 border border-neutral-600 rounded-2xl bg-neutral-900/90 backdrop-blur-sm hover:scale-[1.02] hover:border-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 opacity-90 hover:opacity-100 p-6 md:p-8">
       <p className="text-xl font-bold">&nbsp;&nbsp;&nbsp;&nbsp;{props.title}</p>
       <div className="bg-neutral-800 w-full flex-1 min-h-0 rounded-lg p-2 py-3 no-scollbar">
-        <div className="w-full h-full overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none'] flex flex-col">
+        <div className="w-full h-full overflow-y-auto flex flex-col">
           <div className="text-sm flex flex-col gap-y-2 px-3">
             <div className="text-base">
               <p>
