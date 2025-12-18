@@ -21,7 +21,7 @@ let projects = [
     },
     images: {
       main: "/assets/Portfolio/generalView.png",
-      code: "",
+      code: "/assets/Portfolio/codeCard.png",
       other: "/assets/Portfolio/liquidGlassEffect_ProjectPresentation.png",
     },
   },
@@ -53,7 +53,7 @@ let projects = [
     description:
       "Ce portfolio a été réalisé pour présenter mes compétences et mes projets. Il utilise React 19 et TailwindCSS v4.",
     link: {
-      site: "https://gitlabinfo.iutmontp.univ-montp2.fr/sae3a/projets/lebalchm-nerrande-tourona-philippote/sae3a-base"
+      code: "https://gitlabinfo.iutmontp.univ-montp2.fr/sae3a/projets/lebalchm-nerrande-tourona-philippote/sae3a-base"
     },
     images: {},
   },
