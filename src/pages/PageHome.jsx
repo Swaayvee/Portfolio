@@ -3,7 +3,7 @@ import APropos from "../components/molecule/APropos";
 import FuturPro from "./../components/molecule/FuturPro";
 import Link from "./../components/atom/Link";
 
-let projects = [
+const projects = [
   {
     title: "Portfolio",
     langage: "JavaScript et JSX",
@@ -56,9 +56,16 @@ let projects = [
       site: "https://webinfo.iutmontp.univ-montp2.fr/~philippote/sae3a-base/web/controleurFrontal.php",
       code: "https://gitlabinfo.iutmontp.univ-montp2.fr/sae3a/projets/lebalchm-nerrande-tourona-philippote/sae3a-base"
     },
-    images: {},
+    images: {
+      main: "/assets/Co-Vote/generalView.png",
+      other: "/assets/Co-Vote/configurationQuestion.png",
+      code: "/assets/Co-Vote/codeFonctionAntiInjectionSQL.png"
+    },
   },
 ];
+
+
+
 
 const PageHome = () => {
   return (

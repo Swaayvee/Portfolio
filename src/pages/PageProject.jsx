@@ -62,7 +62,7 @@ const PageProject = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-7 flex flex-col gap-10">
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+              <h3 className="max-lg:text-base text-lg font-semibold text-white flex items-center gap-2">
                 <span className="material-symbols-outlined text-neutral-500">
                   code
                 </span>

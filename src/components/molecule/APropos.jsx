@@ -21,8 +21,15 @@ const APropos = () => {
                 alt="Arthur Touron"
               />
             ) : (
-              <div className="h-full w-full bg-neutral-700 flex items-center justify-center hover:scale-103 transition-all duration-500">
-                <p className="text-lg font-semibold text-neutral-300/80">Pas encore disponible</p>
+              <div className="relative flex h-full w-full items-center justify-center">
+                <img
+                  src="/assets/free-nature-images.jpg"
+                  className="absolute inset-0 h-full w-full object-cover blur-xl"
+                  alt="image pas encore disponible"
+                />
+                <p className="relative z-10 text-center font-semibold text-xl text-neutral-900/75">
+                  Pas encore disponible
+                </p>
               </div>
             )}
           </div>
