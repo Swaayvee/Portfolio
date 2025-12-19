@@ -12,9 +12,9 @@ const projects = [
     summary:
       "Mon site personnel et vitrine de mes projets avec un système de navigation intuitif.",
     contexte:
-      "Ce portfolio a été réalisé pour présenter mes compétences et mes projets. Il utilise React 19 et TailwindCSS v4 qui sont, pour moi, des technologies assez nouvelles. Pour me présenter numériquement dans le milieu professionnel, j'ai décidé de créer ce portfolio. Il permet de montrer mes compétences en développement web acquises au cours de mes études.",
+      "Ce portfolio a été réalisé pour présenter mes compétences et mes projets. Il utilise React 19 et Tailwind CSS v4 qui sont, pour moi, des technologies assez nouvelles. Pour me présenter numériquement dans le milieu professionnel, j'ai décidé de créer ce portfolio. Il permet de montrer mes compétences en développement web acquises au cours de mes études.",
     description:
-      "Le portfolio suivant est responsive et fonctionnel sur tous les appareils mais aussi sur tous les moteurs de recherche afin d'assurer une meilleure compatibilité. Ce projet m'as appris à réaliser un effet dit 'liquid glasse' mais aussi à utiliser le framework TailwindCSS pour créer un design moderne et élégant ainsi que la bibliothèque React pour créer des composants réutilisables. Avec l'utilisation de React j'ai aussi la décomposition atomique (composant réutilisable) et la gestion d'état avec le hook useState().",
+      "Le portfolio suivant est responsive et fonctionnel sur tous les appareils mais aussi sur tous les moteurs de recherche afin d'assurer une meilleure compatibilité. Ce projet m'a appris à réaliser un effet dit 'liquid glass' mais aussi à utiliser le framework Tailwind CSS pour créer un design moderne et élégant ainsi que la bibliothèque React pour créer des composants réutilisables. Avec l'utilisation de React, j'ai aussi la décomposition atomique (composant réutilisable) et la gestion d'état avec le hook useState().",
     link: {
       site: "/",
       code: "https://github.com/Swaayvee/Portfolio",
@@ -32,9 +32,11 @@ const projects = [
     typeProjet: "Projet personnel",
     summary:
       "Application de gestion de tâches simple et efficace avec un système de date et priorité.",
+    contexte:
+      "Lors des grandes vacances 2024-2025, j'ai décidé de créer une application de gestion de tâches simple et efficace avec un système de date et de priorité dont l'objectif était d'apprendre un framework web, Angular. To-do List était un projet fait seul dont le but était de mettre en pratique ce que j'avais appris.",
     description:
-      "Ce portfolio a été réalisé pour présenter mes compétences et mes projets. Il utilise React 19 et TailwindCSS v4.",
-    link: {
+      "Ce projet utilise donc des composants Angular appelés ’component’. Pour cela j'ai créé une application web avec un système de stockage des informations avec la base de données 'Local Sotrage' permettant de stocker toutes les informations côté client. Il y a aussi un système de connexion avec Gmail, cependant je n'ai pas réussi à créer un compte dont toutes les informations liées à l'utilisateur étaient gardées en fonction de son e-mail.",
+    link:{
       site: "https://to-do-project-angular.firebaseapp.com/",
     },
     images: {
@@ -50,8 +52,10 @@ const projects = [
     typeProjet: "Projet scolaire",
     summary:
       "Plateforme de vote similaire à un réseau social permettant de donner son avis en votant.",
+    contexte:
+      "Ce projet a été réalisé lors du premier semestre de l'année 2025-2026 (BUT 2ᵉ année) dans le cadre d'une SAE. Elle a pour but de mettre en pratique les connaissances acquises en PHP vues durant le même semestre. Il a aussi comme but secondaire une relation client et développeur se matérialisant en groupes de 4 à 5 personnes.",
     description:
-      "Ce portfolio a été réalisé pour présenter mes compétences et mes projets. Il utilise React 19 et TailwindCSS v4.",
+      "Le sujet était une application web permettant de voter de différentes façons (avec différents types de vote). Pour cela on utilisait la structure MVC pour l'architecture et la méthode de travail SCRUM (méthode agile) pour l'équipe. Afin de stocker toutes les informations et de synchroniser toutes les instances de l'application, il fallait stocker toutes les données. On a donc utilisé PHP MyAdmin, qui est un système de gestion de base de données. Pour réaliser celui-ci, il fallait se coordonner pour une meilleure productivité.",
     link: {
       site: "https://webinfo.iutmontp.univ-montp2.fr/~philippote/sae3a-base/web/controleurFrontal.php",
       code: "https://gitlabinfo.iutmontp.univ-montp2.fr/sae3a/projets/lebalchm-nerrande-tourona-philippote/sae3a-base"
