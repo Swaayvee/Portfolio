@@ -18,8 +18,8 @@ const APropos = () => {
             <div className="relative flex h-full w-full items-center justify-center">
                 <img
                   src="/assets/photoProfile.jpg"
-                  className="absolute inset-0 h-full w-full object-cover blur-xl"
-                  alt="image pas encore disponible"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  alt="photo de profile"
                 />
                 <p className="relative z-10 text-center font-semibold text-xl text-neutral-900/75">
                   Pas encore disponible
