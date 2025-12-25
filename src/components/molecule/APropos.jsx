@@ -11,19 +11,13 @@ const APropos = () => {
       </h1>
 
       <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-start">
-        <div className="relative group shrink-0">
-          <div className="absolute -inset-1 bg-linear-to-r from-neutral-600 to-neutral-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-          <div className="relative aspect-square w-64 overflow-hidden rounded-full border-4 border-neutral-800 shadow-2xl">
-            {imageProfile ? (
-              <img
-                src={imageProfile}
-                className="h-full w-full object-cover transform hover:scale-110 transition-transform duration-500"
-                alt="Arthur Touron"
-              />
-            ) : (
-              <div className="relative flex h-full w-full items-center justify-center">
+        { imageProfile !== "" ? (
+          <div className="relative group shrink-0">
+            <div className="absolute -inset-1 bg-linear-to-r from-neutral-600 to-neutral-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <div className="relative aspect-square w-64 overflow-hidden rounded-full border-4 border-neutral-800 shadow-2xl">
+            <div className="relative flex h-full w-full items-center justify-center">
                 <img
-                  src="/assets/free-nature-images.jpg"
+                  src="/assets/photoProfile.jpg"
                   className="absolute inset-0 h-full w-full object-cover blur-xl"
                   alt="image pas encore disponible"
                 />
@@ -31,9 +25,10 @@ const APropos = () => {
                   Pas encore disponible
                 </p>
               </div>
-            )}
           </div>
-        </div>
+        </div>): (
+          ""
+        )}
 
         <div className="flex flex-col gap-6 text-neutral-300 leading-relaxed text-lg">
           <p className="font-light italic text-white text-xl border-l-4 border-neutral-500 pl-4 py-1">
